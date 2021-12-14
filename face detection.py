@@ -26,7 +26,7 @@ def mainwin():
 
 
         for root, dir, files in os.walk("Z:\PYTHON\opencv\image"):
-                    # print ("--",root)
+                    
                 if root=="Z:\PYTHON\opencv\image":
 
                     for items in fnmatch.filter(files, "*"):
@@ -53,8 +53,7 @@ def mainwin():
 
 
         cap=cv.VideoCapture(0)
-            # fourcc=cv.VideoWriter_fourcc(*"XVID")
-            # output=cv.VideoWriter("OUTPUT.mp4",fourcc,30,(640,480))
+            
         while True:
             sucess,frame=cap.read(0)
             img=cv.resize(frame,(0,0),None,0.25,0.25)
@@ -74,7 +73,7 @@ def mainwin():
                     pass
 
                 if result!=None:
-                        # print(result)
+                        
                     if result==[True]:
                         name1=name.split(".")
                         print(name1[0])
@@ -146,13 +145,7 @@ def mainwin():
     win.title("LUCY")
     win.iconbitmap("Z:\PYTHON\Face detection\icon.ico")
     win.geometry("1920x720+0+80")
-    #---------wallpaper---------
-    # wallimage=Image.open("Z:\PYTHON\Face detection\wall2.png")
-    # # wallimage=wallimage.resize((1920,720))
-    # wall_image=ImageTk.PhotoImage(wallimage)
-    # print(wall_image)
-    # lb1=Label(win,image=wall_image)
-    # lb1.place(x=0,y=0)
+
 
     #-----exit icon------------
     imgexit=Image.open("Z:\PYTHON\Face detection\exit.ico")
@@ -161,8 +154,7 @@ def mainwin():
     exit_enter.place(x=1450,y=680)
     #---------options--------------
     #---1. real time recognition
-    #---2. Add to databse
-    #---3. compare two faces
+    #---2. compare two faces
 
     imgcamera=Image.open("Z:\PYTHON\Face detection\camera.png")
     imgcamera=imgcamera.resize((50,50))
@@ -176,11 +168,7 @@ def mainwin():
     compare_button=Button(win,image=compare_image,background=None,borderwidth=0,command=compare)
     compare_button.place(x=690,y=200)
      
-    imgdata=Image.open("Z:\PYTHON\Face detection\server.png")
-    imgdata=imgdata.resize((50,50))
-    data_image=ImageTk.PhotoImage(imgdata)
-    data_button=Button(win,image=data_image,background=None,borderwidth=0,command=data)
-    data_button.place(x=790,y=200)
+
 
     info_frame=LabelFrame(win,padx=50,pady=50)
     info_frame.grid(row=1,column=1)
